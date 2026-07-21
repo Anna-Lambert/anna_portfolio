@@ -21,7 +21,7 @@ FROM (
   LEFT JOIN [dwh].[acm_shipments] S on S.from_location_id = L.location_id
   WHERE L.customer_id = 123
   AND L.status = 2 -- active locations
-   AND S.status In (2,3,4-) -- shipping, dleivered, closed,  shipments
+   AND S.status In (2,3,4) -- shipping, dleivered, closed,  shipments
 ) O
 WHERE shipment_number = 1
 
@@ -48,7 +48,7 @@ FROM (
   LEFT JOIN [dwh].[acm_shipments] S on S.to_location_id = L.location_id
   WHERE L.customer_id = 12
   AND L.status = 2 -- active locations
-   AND S.status In (2,3,4-) -- shipping, dleivered, closed,  shipments
+   AND S.status In (2,3,4) -- shipping, dleivered, closed,  shipments
 ) O
 WHERE shipment_number = 1
 
